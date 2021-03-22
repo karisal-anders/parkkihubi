@@ -1,6 +1,6 @@
 /** Functions for converting API data to UI types. */
 
-import * as moment from 'moment';
+import moment from 'moment';
 
 import * as api from './api/types';
 import * as uic from './components/types';
