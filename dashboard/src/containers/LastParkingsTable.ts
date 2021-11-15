@@ -18,7 +18,7 @@ const getDataOfParking = (parking?: Parking): ParkingData|undefined => {
     } : undefined;
 }
 
-const formatTime  = (timeStamp) =>
+const formatTime  = (timeStamp?: number|null): string =>
     !timeStamp ? '' : moment(timeStamp).format('DD.MM.YYYY HH:mm');
 
 const mapStateToProps = (state: RootState) => {
@@ -71,7 +71,6 @@ const mapStateToProps = (state: RootState) => {
     ];
 
     const pagination = paginationFactory({
-        expandRowBgColor: '#D9D9D9',
         sizePerPageList: [],
         sizePerPage: 17,
         page: 1,
@@ -81,7 +80,5 @@ const mapStateToProps = (state: RootState) => {
     return {data, columns, keyField: 'id', bordered: false, pagination};
 }
 
-const mapDispatchToProps = null;
-
-export default connect(mapStateToProps, mapDispatchToProps)(BootstrapTable);
+export default connect(mapStateToProps)(BootstrapTable);
 

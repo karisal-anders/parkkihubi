@@ -20,7 +20,7 @@ export function convertRegion(region: api.Region): uic.Region {
         type: region.type,
         geometry: region.geometry,
         properties
-    };
+    } as uic.Region;
 }
 
 export function convertRegionStats(
